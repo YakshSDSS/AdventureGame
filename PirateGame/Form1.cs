@@ -178,6 +178,7 @@ namespace PirateGame
                     outputLabel.Text = "You are a pirate with a 10 man crew. Your goal is to become rich.\nWhat do you do?";
                     option1.Text = "Fight pirates";
                     option2.Text = "Explore";
+
                     pictureBox.BackgroundImage = (Properties.Resources.pirate_symbol);
                     shipSound.PlayLooping();
                     break;
@@ -185,15 +186,18 @@ namespace PirateGame
                     outputLabel.Text = "You encounter a pirate crew of 15 men.\nDo you fight?";
                     option1.Text = "No";
                     option2.Text = "Yes";
+
                     pictureBox.BackgroundImage = (Properties.Resources.pirate_crew);
                     fightSound.PlayLooping();
                     break;
                 case 3:
                     option3.Visible = true;
+
                     outputLabel.Text = "You come across a habited island.\nWhat do you do?";
                     option1.Text = "Peacefully Visit";
                     option2.Text = "Raid";
                     option3.Text = "Keep exploring";
+
                     pictureBox.BackgroundImage = (Properties.Resources.Island);
                     shipSound.PlayLooping();
                     break;
@@ -201,6 +205,7 @@ namespace PirateGame
                     outputLabel.Text = "You kill them and steal their riches.\nYou are now very rich.\nPlay again?";
                     option1.Text = "No";
                     option2.Text = "Yes";
+
                     pictureBox.BackgroundImage = (Properties.Resources.Rich_image);
                     victorySound.PlayLooping();
                     break;
@@ -208,6 +213,7 @@ namespace PirateGame
                     outputLabel.Text = "You get demolished by the enemies.\nPlay again?";
                     option1.Text = "No";
                     option2.Text = "Yes";
+
                     pictureBox.BackgroundImage = (Properties.Resources.DeathImage);
                     deathSound.PlayLooping();
                     break;
@@ -215,7 +221,9 @@ namespace PirateGame
                     outputLabel.Text = "The villagers were Kung Fu masters and they kill you.\nPlay again?";
                     option1.Text = "No";
                     option2.Text = "Yes";
+
                     option3.Visible = false;
+
                     pictureBox.BackgroundImage = (Properties.Resources.DeathImage);
                     deathSound.PlayLooping();
                     break;
@@ -223,14 +231,18 @@ namespace PirateGame
                     outputLabel.Text = "You come across an casino.\nDo you enter?";
                     option1.Text = "Yes";
                     option2.Text = "No";
+
                     option3.Visible = false;
+
                     pictureBox.BackgroundImage = (Properties.Resources.Casino);
                     break;
                 case 8:
                     outputLabel.Text = "You never step foot on that island and leave.\nIt's been a while and you are low on supplies.";
                     option1.Text = "Fish";
                     option2.Text = "Phone marines";
+
                     option3.Visible = false;
+
                     pictureBox.BackgroundImage = (Properties.Resources.pirate_ship);
                     shipSound.PlayLooping();
                     break;
@@ -238,6 +250,7 @@ namespace PirateGame
                     outputLabel.Text = "You get some more food.\nYou come across another island.\nWhat do you do?";
                     option1.Text = "Keep exploring";
                     option2.Text = "Visit";
+
                     pictureBox.BackgroundImage = (Properties.Resources.pirate_ship);
                     shipSound.PlayLooping();
                     break;
@@ -245,6 +258,7 @@ namespace PirateGame
                     outputLabel.Text = "You can't find land then you run out of food and starve to death.\nPlay again?";
                     option1.Text = "No";
                     option2.Text = "Yes";
+
                     pictureBox.BackgroundImage = (Properties.Resources.DeathImage);
                     deathSound.PlayLooping();
                     break;
@@ -252,6 +266,7 @@ namespace PirateGame
                     outputLabel.Text = "The marines save you and throw you in jail where you\nrot for the rest of your life.\nPlay again?";
                     option1.Text = "No";
                     option2.Text = "Yes";
+
                     pictureBox.BackgroundImage = (Properties.Resources.DeathImage);
                     deathSound.PlayLooping();
                     break;
@@ -259,6 +274,7 @@ namespace PirateGame
                     outputLabel.Text = "You gamble and become dirt poor.\nPlay again?";
                     option1.Text = "No";
                     option2.Text = "Yes";
+
                     pictureBox.BackgroundImage = (Properties.Resources.DeathImage);
                     deathSound.PlayLooping();
                     break;
@@ -266,12 +282,14 @@ namespace PirateGame
                     outputLabel.Text = "You somehow find yourself at an auction.\nThere is a painting for $1000.\nDo you buy it?";
                     option1.Text = "Yes";
                     option2.Text = "No";
+
                     pictureBox.BackgroundImage = (Properties.Resources.Casino);
                     break;
                 case 14:
                     outputLabel.Text = "You later find out that the painting is worth quite a lot and\nsell it to become rich.";
                     option1.Text = "Yes";
                     option2.Text = "No";
+
                     pictureBox.BackgroundImage = (Properties.Resources.Rich_image);
                     victorySound.PlayLooping();
                     break;
@@ -279,12 +297,14 @@ namespace PirateGame
                     outputLabel.Text = "You explore the island more, looking for supplies.\nA massive gang robs you.\nWhat do you do?";
                     option1.Text = "Fight";
                     option2.Text = "Run";
+
                     pictureBox.BackgroundImage = (Properties.Resources.Gang);
                     break;
                 case 16:
                     outputLabel.Text = "You lose a couple of men but get your money back.\nDo you follow the gang back to their hideout?";
                     option1.Text = "No";
                     option2.Text = "Yes";
+
                     pictureBox.BackgroundImage = (Properties.Resources.Gang);
                     fightSound.PlayLooping();
                     break;
@@ -292,6 +312,7 @@ namespace PirateGame
                     outputLabel.Text = "You are now dirt poor.\nPlay again? ";
                     option1.Text = "No";
                     option2.Text = "Yes";
+
                     pictureBox.BackgroundImage = (Properties.Resources.Gang);
                     deathSound.PlayLooping();
                     break;
@@ -299,6 +320,7 @@ namespace PirateGame
                     outputLabel.Text = "You notice that they have lots of money laying around.\nDo you try and rob them?";
                     option1.Text = "Yes";
                     option2.Text = "No";
+
                     pictureBox.BackgroundImage = (Properties.Resources.Gang);
                     fightSound.PlayLooping();
                     break;
@@ -306,6 +328,7 @@ namespace PirateGame
                     outputLabel.Text = "You do nothing with your life, you are now old and not rich.\nPlay again?";
                     option1.Text = "No";
                     option2.Text = "Yes";
+
                     pictureBox.BackgroundImage = (Properties.Resources.DeathImage);
                     deathSound.PlayLooping();
                     break;
@@ -313,6 +336,7 @@ namespace PirateGame
                     outputLabel.Text = "You are the only one who survives and you become rich.\nPlay again?";
                     option1.Text = "No";
                     option2.Text = "Yes";
+
                     pictureBox.BackgroundImage = (Properties.Resources.Rich_image);
                     victorySound.PlayLooping();
                     break;
