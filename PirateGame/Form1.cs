@@ -10,14 +10,18 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Media;
 
+// Yaksh Patel
+// April 5, 2024
+// Computer science game
+
 namespace PirateGame
 {
-    
     public partial class pirateVoyage : Form
     {
         int page;
 
         Random randGen = new Random();
+
         new SoundPlayer introSound = new SoundPlayer(Properties.Resources.intro);
         new SoundPlayer shipSound = new SoundPlayer(Properties.Resources.ship);
         new SoundPlayer victorySound = new SoundPlayer(Properties.Resources.victory);
@@ -28,7 +32,7 @@ namespace PirateGame
         {
             InitializeComponent();
 
-            option1.Visible = false;
+            option1.Visible = false; // So no options can be selected before game starts.
             option2.Visible = false;
             option3.Visible = false;
 
@@ -36,18 +40,19 @@ namespace PirateGame
         }
         private void startButton_Click(object sender, EventArgs e)
         {
-            startButton.Visible = false;
+            startButton.Visible = false; //Show the first two options after the game has begun.
             option1.Visible = true;
             option2.Visible = true;
+
             introSound.Stop();
 
-            page = 1;
+            page = 1; // So the game can start.
 
-            DisplayPage();
+            DisplayPage(); 
         }
         private void option1_Click(object sender, EventArgs e)
         {
-            if (page == 1)
+            if (page == 1) // Switches the page accordingly when option 1 is selected.
             {
                 page = 2;
             }
@@ -59,17 +64,17 @@ namespace PirateGame
             {
                 page = 7;
             }
-            else if (page == 7)
-            {
-                page = 12;
-            }
-            else if (page == 12)
+            else if (page == 4)
             {
                 page = 99;
             }
-            else if (page == 3)
+            else if (page == 5)
             {
-                page = 7;
+                page = 99;
+            }
+            else if (page == 6)
+            {
+                page = 99;
             }
             else if (page == 7)
             {
@@ -83,9 +88,25 @@ namespace PirateGame
             {
                 page = 10;
             }
+            else if (page == 10)
+            {
+                page = 99;
+            }
+            else if (page == 11)
+            {
+                page = 99;
+            }
+            else if (page == 12)
+            {
+                page = 99;
+            }
             else if (page == 13)
             {
                 page = 14;
+            }
+            else if (page == 14)
+            {
+                page = 99;
             }
             else if (page == 15)
             {
@@ -95,31 +116,36 @@ namespace PirateGame
             {
                 page = 19;
             }
+            else if (page == 17)
+            {
+                page = 99;
+            }
             else if (page == 18)
             {
                 page = 20;
             }
-            else
+            else if (page == 19)
             {
                 page = 99;
             }
-            DisplayPage();
+            else if (page == 20)
+            {
+                page = 99;
+            }
+
+            DisplayPage(); // To display the text for each page.
         }       
         private void option2_Click(object sender, EventArgs e)
         {
-            int randGenValue = randGen.Next(1, 11);
+            int randGenValue = randGen.Next(1, 11); // All code in this section switches the page accordingly when option 2 is selected.
             
             if (page == 1)
             {
                 page = 3;
             }
-            else if (page == 3)
-            {
-                page = 6;
-            }
             else if (page == 2)
             {
-                if (randGenValue > 6)
+                if (randGenValue > 6) // Randomizes which page it takes you to; 30% to page 4 and 70% to page 5.
                 {
                     page = 4;
                 }
@@ -128,25 +154,25 @@ namespace PirateGame
                     page = 5;
                 }
             }
+            else if (page == 3)
+            {
+                page = 6;
+            }
+            else if (page == 4)
+            {
+                page = 1;
+            }
+            else if (page == 5)
+            {
+                page = 1;
+            }
+            else if (page == 6)
+            {
+                page = 1;
+            }
             else if (page == 7)
             {
                 page = 13;
-            }
-            else if (page == 13)
-            {
-                page = 15;
-            }
-            else if (page == 15)
-            {
-                page = 17;
-            }
-            else if (page == 16)
-            {
-                page = 18;
-            }
-            else if (page == 18)
-            {
-                page = 19;
             }
             else if (page == 8)
             {
@@ -156,11 +182,52 @@ namespace PirateGame
             {
                 page = 7;
             }
-            else
+            else if (page == 10)
             {
                 page = 1;
             }
-            DisplayPage();
+            else if (page == 11)
+            {
+                page = 1;
+            }
+            else if (page == 12)
+            {
+                page = 1;
+            }
+            else if (page == 13)
+            {
+                page = 15;
+            }
+            else if (page == 14)
+            {
+                page = 1;
+            }
+            else if (page == 15)
+            {
+                page = 17;
+            }
+            else if (page == 16)
+            {
+                page = 18;
+            }
+            else if (page == 17)
+            {
+                page = 1;
+            }
+            else if (page == 18)
+            {
+                page = 19;
+            }
+            else if (page == 19)
+            {
+                page = 1;
+            }
+            else if (page == 20)
+            {
+                page = 1;
+            }
+
+            DisplayPage(); // To show the text.
         }
         private void option3_Click(object sender, EventArgs e)
         {
@@ -172,7 +239,7 @@ namespace PirateGame
         }
         private void DisplayPage()
         {
-            switch (page)
+            switch (page) // Changes text, images, and sounds according to page number.
             {
                 case 1:
                     outputLabel.Text = "You are a pirate with a 10 man crew. Your goal is to become rich.\nWhat do you do?";
@@ -180,6 +247,7 @@ namespace PirateGame
                     option2.Text = "Explore";
 
                     pictureBox.BackgroundImage = (Properties.Resources.pirate_symbol);
+
                     shipSound.PlayLooping();
                     break;
                 case 2:
@@ -188,10 +256,11 @@ namespace PirateGame
                     option2.Text = "Yes";
 
                     pictureBox.BackgroundImage = (Properties.Resources.pirate_crew);
+
                     fightSound.PlayLooping();
                     break;
                 case 3:
-                    option3.Visible = true;
+                    option3.Visible = true; // Show option 3 because there are 3 options for this.
 
                     outputLabel.Text = "You come across a habited island.\nWhat do you do?";
                     option1.Text = "Peacefully Visit";
@@ -199,6 +268,7 @@ namespace PirateGame
                     option3.Text = "Keep exploring";
 
                     pictureBox.BackgroundImage = (Properties.Resources.Island);
+
                     shipSound.PlayLooping();
                     break;
                 case 4:
@@ -207,6 +277,7 @@ namespace PirateGame
                     option2.Text = "Yes";
 
                     pictureBox.BackgroundImage = (Properties.Resources.Rich_image);
+
                     victorySound.PlayLooping();
                     break;
                 case 5:
@@ -215,6 +286,7 @@ namespace PirateGame
                     option2.Text = "Yes";
 
                     pictureBox.BackgroundImage = (Properties.Resources.DeathImage);
+
                     deathSound.PlayLooping();
                     break;
                 case 6:
@@ -222,9 +294,10 @@ namespace PirateGame
                     option1.Text = "No";
                     option2.Text = "Yes";
 
-                    option3.Visible = false;
+                    option3.Visible = false; // Disable option 3 because it is not needed.
 
                     pictureBox.BackgroundImage = (Properties.Resources.DeathImage);
+
                     deathSound.PlayLooping();
                     break;
                 case 7:
@@ -232,7 +305,7 @@ namespace PirateGame
                     option1.Text = "Yes";
                     option2.Text = "No";
 
-                    option3.Visible = false;
+                    option3.Visible = false; // Disable option 3 because it is not needed.
 
                     pictureBox.BackgroundImage = (Properties.Resources.Casino);
                     break;
@@ -244,6 +317,7 @@ namespace PirateGame
                     option3.Visible = false;
 
                     pictureBox.BackgroundImage = (Properties.Resources.pirate_ship);
+
                     shipSound.PlayLooping();
                     break;
                 case 9:
@@ -252,6 +326,7 @@ namespace PirateGame
                     option2.Text = "Visit";
 
                     pictureBox.BackgroundImage = (Properties.Resources.pirate_ship);
+
                     shipSound.PlayLooping();
                     break;
                 case 10:
@@ -260,6 +335,7 @@ namespace PirateGame
                     option2.Text = "Yes";
 
                     pictureBox.BackgroundImage = (Properties.Resources.DeathImage);
+
                     deathSound.PlayLooping();
                     break;
                 case 11:
@@ -268,6 +344,7 @@ namespace PirateGame
                     option2.Text = "Yes";
 
                     pictureBox.BackgroundImage = (Properties.Resources.DeathImage);
+
                     deathSound.PlayLooping();
                     break;
                 case 12:
@@ -276,12 +353,24 @@ namespace PirateGame
                     option2.Text = "Yes";
 
                     pictureBox.BackgroundImage = (Properties.Resources.DeathImage);
+
                     deathSound.PlayLooping();
                     break;
                 case 13:
-                    outputLabel.Text = "You somehow find yourself at an auction.\nThere is a painting for $1000.\nDo you buy it?";
+                    outputLabel.Text = "You somehow find yourself at an auction.";
+
+                    option1.Enabled = false; //Disable so player cannot choose before reading all the text.
+                    option2.Enabled = false;
+
+                    Refresh();
+                    Thread.Sleep(1000);
+
+                    outputLabel.Text = "\nThere is a painting for $1000.\nDo you buy it?";
                     option1.Text = "Yes";
                     option2.Text = "No";
+
+                    option1.Enabled = true; //Now enable the player to choose option.
+                    option2.Enabled = true;
 
                     pictureBox.BackgroundImage = (Properties.Resources.Casino);
                     break;
@@ -291,6 +380,7 @@ namespace PirateGame
                     option2.Text = "No";
 
                     pictureBox.BackgroundImage = (Properties.Resources.Rich_image);
+
                     victorySound.PlayLooping();
                     break;
                 case 15:
@@ -306,6 +396,7 @@ namespace PirateGame
                     option2.Text = "Yes";
 
                     pictureBox.BackgroundImage = (Properties.Resources.Gang);
+
                     fightSound.PlayLooping();
                     break;
                 case 17:
@@ -314,6 +405,7 @@ namespace PirateGame
                     option2.Text = "Yes";
 
                     pictureBox.BackgroundImage = (Properties.Resources.Gang);
+
                     deathSound.PlayLooping();
                     break;
                 case 18:
@@ -322,6 +414,7 @@ namespace PirateGame
                     option2.Text = "No";
 
                     pictureBox.BackgroundImage = (Properties.Resources.Gang);
+
                     fightSound.PlayLooping();
                     break;
                 case 19:
@@ -330,6 +423,7 @@ namespace PirateGame
                     option2.Text = "Yes";
 
                     pictureBox.BackgroundImage = (Properties.Resources.DeathImage);
+
                     deathSound.PlayLooping();
                     break;
                 case 20:
@@ -338,6 +432,7 @@ namespace PirateGame
                     option2.Text = "Yes";
 
                     pictureBox.BackgroundImage = (Properties.Resources.Rich_image);
+
                     victorySound.PlayLooping();
                     break;
                 case 99:
@@ -349,7 +444,7 @@ namespace PirateGame
                     option2.Visible = false;
 
                     Refresh();
-                    Thread.Sleep(2000);
+                    Thread.Sleep(2000); //Close program.
                     Application.Exit();
                     break;
             }
