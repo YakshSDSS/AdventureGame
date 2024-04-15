@@ -375,7 +375,7 @@ namespace PirateGame
                     pictureBox.BackgroundImage = (Properties.Resources.Casino);
                     break;
                 case 14:
-                    outputLabel.Text = "You later find out that the painting is worth quite a lot and\nsell it to become rich.";
+                    outputLabel.Text = "You later find out that the painting is worth quite a lot and\nsell it to become rich.\nPlay again?";
                     option1.Text = "Yes";
                     option2.Text = "No";
 
